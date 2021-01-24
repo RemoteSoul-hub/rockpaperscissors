@@ -27,10 +27,26 @@ options.forEach(option => {
         // Computer Choice
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
-        
+        // call compareHands
     });
 });
 
+};
+
+const compareHands = (playerChoice, computerChoice) => {
+    // update text
+    const winner = document.querySelector('.winner');
+    // Check for a tie
+    if(playerChoice === computerChoice) {
+        winner.textContent = "It is a tie.";
+        return;
+    }
+    // Check for player has rock
+    if(playerChoice === 'rock') {
+        if(computerChoice === 'scissors') {
+            winner.textContent = "Player Wins";
+        }
+    }
 };
 
     // Call all the inner functions 
