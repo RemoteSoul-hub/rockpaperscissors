@@ -1,8 +1,24 @@
 const game = ()=> {
+    let pScore = 0; /* player score */
+    let cScore = 0;  /* computer score */
 
-}
+    const startGame = () =>{
+        const playBtn = document.querySelector('.intro button');
+        const introScreen = document.querySelector('.intro');
+        const match = document.querySelector('.match');
 
+        playBtn.addEventListener('click', () => {
+            introScreen.classList.add('fadeOut');
+            match.classList.add('fadeIn');
+        });
+    };
 
+    // Call all the inner functions 
+    startGame();
+};
+
+// start the game function 
+game();
 
 
 //     /* Function that randomizes the output from the computer*/
