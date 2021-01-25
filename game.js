@@ -28,7 +28,7 @@ options.forEach(option => {
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
         // call compareHands
-
+        compareHands(this.textContent, computerChoice);
 
         // Update Images
         playerHand.src = `./assets/${this.textContent}.png`;
@@ -37,6 +37,13 @@ options.forEach(option => {
 });
 
 };
+
+const updateScore = () => {
+    const playerScore = document.querySelector('.player-score p');
+    const cpuScore = document.querySelector('.cpu-score p');
+    playerScore.textContent = pScore;
+    cpuScore.textContent = cScore;
+}
 
 const compareHands = (playerChoice, computerChoice) => {
     // update text
@@ -50,10 +57,14 @@ const compareHands = (playerChoice, computerChoice) => {
     if(playerChoice === 'rock') {
         if(computerChoice === 'scissors') {
             winner.textContent = "Player Wins";
+            pScore++;
+            updateScore();
             return;
         }
         else {
             winner.textContent = "Computer Wins";
+            cScore++;
+            updateScore();
             return;
         }
     }
@@ -61,10 +72,14 @@ const compareHands = (playerChoice, computerChoice) => {
     if(playerChoice === 'paper') {
         if(computerChoice === 'scissors') {
             winner.textContent = "Computer Wins";
+            cScore++;
+            updateScore();
             return;
         }
         else {
             winner.textContent = "Player Wins";
+            pScore++;
+            updateScore();
             return;
         }
     }
@@ -72,10 +87,14 @@ const compareHands = (playerChoice, computerChoice) => {
        if(playerChoice === 'scissors') {
         if(computerChoice === 'paper') {
             winner.textContent = "Player Wins";
+            pScore++;
+            updateScore();
             return;
         }
         else {
             winner.textContent = "Computer Wins";
+            cScore++;
+            updateScore();
             return;
         }
     }
