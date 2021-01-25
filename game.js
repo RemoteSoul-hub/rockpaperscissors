@@ -28,6 +28,11 @@ options.forEach(option => {
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computerOptions[computerNumber];
         // call compareHands
+
+
+        // Update Images
+        playerHand.src = `./assets/${this.textContent}.png`;
+        cpuHand.src = `./assets/${computerChoice}.png`;
     });
 });
 
@@ -41,10 +46,37 @@ const compareHands = (playerChoice, computerChoice) => {
         winner.textContent = "It is a tie.";
         return;
     }
-    // Check for player has rock
+    // Check for player rock
     if(playerChoice === 'rock') {
         if(computerChoice === 'scissors') {
             winner.textContent = "Player Wins";
+            return;
+        }
+        else {
+            winner.textContent = "Computer Wins";
+            return;
+        }
+    }
+    // Check for player paper
+    if(playerChoice === 'paper') {
+        if(computerChoice === 'scissors') {
+            winner.textContent = "Computer Wins";
+            return;
+        }
+        else {
+            winner.textContent = "Player Wins";
+            return;
+        }
+    }
+       // Check for player scissors
+       if(playerChoice === 'scissors') {
+        if(computerChoice === 'paper') {
+            winner.textContent = "Player Wins";
+            return;
+        }
+        else {
+            winner.textContent = "Computer Wins";
+            return;
         }
     }
 };
