@@ -108,7 +108,17 @@ const compareHands = (playerChoice, computerChoice) => {
         }
     }
 };
+// counts the 5 rounds
+const countRounds = () => {
+    for (let i=1; i<=5;i++) {
 
+    }
+
+}
+// Announces final result ( winner)
+const finalres = (pScore, cScore) => {
+
+}
     // Call all the inner functions 
     startGame();
     playMatch();
